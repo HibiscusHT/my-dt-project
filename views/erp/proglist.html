@@ -1,0 +1,78 @@
+{header}
+
+<div class="main-content-inner">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="{url}erp/prog?token={token}">Entry Program</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{url}erp/proglist?token={token}">List Program</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{url}erp/subprog?token={token}">Entry Sub Program</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{url}erp/subproglist?token={token}">List Sub Program</a>
+          </li>
+    </ul>
+    <div class="container-inner">
+      <div class="my-4">
+        <a href="#filter" class="btn btn-primary btn-icon" data-toggle="modal">
+          <i class="ico ico-filter sub"></i> FILTER
+        </a>
+        <a href="#" class="ml-2">
+          <i class="ico ico-file-ex middle"></i>
+        </a>
+      </div>
+      <table id="table" class="table table-mains nowrap" style="width:100%">
+        <thead>
+          <tr>
+            <td scope="col" class="text-center">No</td>
+            <td scope="col" class="text-center">Program Name</td>
+            <td scope="col" class="text-center">Pilar</td>
+            <td scope="col" class="text-center">Material Number</td>
+            <td scope="col" class="text-center">Action</td>
+          </tr>
+        </thead>
+        <tbody class="data">
+         
+
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+</div>
+</div>
+
+<script>
+    async function load_data(){
+    let q = await fetch('{url}dtapi/loadprog')
+    let r = await q.json()
+    if(q.ok){
+      if(r.data.length > 0){
+        let m = ''
+        let no = 1
+        r.data.forEach((e)=>{
+          m += '<tr> <td class="text-center" style="width: 10px;">'+no+'</td> <td class="text-center">'+e.ProgramName+'</td> <td class="text-center">'+e.Pilar+'</td> <td class="text-center"></td> <td class="text-center"> <a href="#" class="mx-2"> <i class="ico ico-pencil ico-warning"></i> </a> <a href="#" class="mx-2"> <i class="ico ico-trash"></i> </a> </td> </tr>'
+          no++
+        })
+        document.querySelector('.data').innerHTML = m
+        $('.table-mains').DataTable({
+          "dom": '<<"dt-topbar" if><"t-scool" <t>><"dt-bot-bar" lp>>'
+        })
+      } else {
+        document.querySelector('.data').innerHTML = '<tr><td class="text-center" colspan=5>no data</td></tr>'
+      }
+      
+      } else {
+        document.querySelector('.data').innerHTML = '<tr><td class="text-center" colspan=5>no data</td></tr>'
+      }
+  
+}
+
+load_data()
+</script>
+
+{footer}

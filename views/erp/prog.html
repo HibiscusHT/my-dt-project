@@ -1,0 +1,84 @@
+{header}
+
+<div class="main-content-inner">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="{url}erp/prog?token={token}">Entry Program</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{url}erp/proglist?token={token}">List Program</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{url}erp/subprog?token={token}">Entry Sub Program</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{url}erp/subproglist?token={token}">List Sub Program</a>
+      </li>
+    </ul>
+    <form action="#">
+      <div class="card-over mb-4">
+        <h3 class="title-box">
+          Program Data
+        </h3>
+        <div class="container-inner">
+          <div class="group-sm">
+            <div class="input-list">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  Pilar
+                </div>
+                <div class="col-md-8">
+                  <select class="form-control form-sm pilar w-100" data-key="Pilar">
+                    <option></option>
+                    <option value="1">Kemanusiaan</option>
+                    <option value="2">Pendidikan</option>
+                    <option value="3">Kesehatan</option> 
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="input-list">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  Program Name
+                </div>
+                <div class="col-md-8">
+                  <input type="text" class="form-control form-sm" placeholder="Program Name" data-key="ProgramName">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5 container-inner">
+        <button type="button" class="btn btn-success px-5" onclick="saveme()">
+          <i class="ico ico-save mr-2"></i> SUBMIT
+        </button>
+      </div>
+    </form>
+
+
+  </div>
+</div>
+</div>
+
+<script>
+    async function saveme()
+    {
+        let fd = new FormData
+        let forms = document.querySelectorAll('.form-sm')
+        forms.forEach((e)=>{
+            fd.append(e.dataset.key,e.value)
+        })
+        let q = await fetch('{url}dtapi/addprog',{
+            method: 'POST',
+            body: fd
+        })
+        if(q.ok){
+            alert('program successfully added')
+            location.href = '{url}erp/proglist?token={token}'
+        }
+    }
+</script>
+
+{footer}

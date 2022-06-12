@@ -1,0 +1,81 @@
+{header}
+
+<div class="main-content-inner">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="{url}erp/transaction?token={token}">Entry Transaction</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{url}erp/translist?token={token}">List Transaction</a>
+          </li>
+    </ul>
+    <div class="container-inner">
+      <div class="my-4">
+        <a href="#filter" class="btn btn-primary btn-icon" data-toggle="modal">
+          <i class="ico ico-filter sub"></i> FILTER
+        </a>
+        <a href="#" class="ml-2">
+          <i class="ico ico-file-ex middle"></i>
+        </a>
+      </div>
+      <table id="table" class="table table-mains nowrap" style="width:100%">
+        <thead>
+          <tr>
+            <td scope="col" class="text-center">No</td>
+            <td scope="col" class="text-center">Time</td>
+            <td scope="col" class="text-center">Donator ID</td>
+            <td scope="col" class="text-center">No Handphone</td>
+            <td scope="col" class="text-center">Donator Name</td>
+            <td scope="col" class="text-center">Transaction ID</td>
+            <td scope="col" class="text-center">Via Himpun</td>
+            <td scope="col" class="text-center">Transaction Type</td>
+            <td scope="col" class="text-center">PIC</td>
+            <td scope="col" class="text-center">Material Group</td>
+            <td scope="col" class="text-center">Material Number</td>
+            <td scope="col" class="text-center">Sub Material Number</td>
+            <td scope="col" class="text-center">Amount</td>
+            <td scope="col" class="text-center">Note</td>
+            <td scope="col" class="text-center">Action</td>
+          </tr>
+        </thead>
+        <tbody class="data">
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+</div>
+</div>
+
+<script>
+  async function load_data(){
+    let q = await fetch('{url}dtapi/loadtrans')
+    let r = await q.json()
+    if(q.ok){
+      if(r.data.length > 0){
+        let m = ''
+        let no = 1
+        r.data.forEach((e)=>{
+          m += '<tr><td class="text-center" style="width: 60px;">' +no + '</td><td class="text-center">' +(Intl.DateTimeFormat('id-Id',{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(e.DonationDate)))+ '</td><td class="text-center">' +e.DonatorId + '</td><td class="text-center">' +e.DonatorPhone + '</td><td class="text-center">' +e.DonatorName + '</td><td class="text-center">' +e.TrxId + '</td><td class="text-center">' +e.ViaHimpun + '</td><td class="text-center">' +e.TrxType + '</td><td class="text-center">' +e.PIC + '</td><td class="text-center">' +e.MaterialGroup + '</td><td class="text-center">' +e.MaterialNumber + '</td><td class="text-center">' +e.SubMaterialNumber + '</td><td class="text-center">' +e.Amount + '</td><td class="text-center">' +e.Note + '</td><td class="text-center"><a href="#"><i class="ico ico-print"></i></a></td></tr>'
+          no++
+        })
+        document.querySelector('.data').innerHTML = m
+        $('.table-mains').DataTable({
+          "dom": '<<"dt-topbar" if><"t-scool" <t>><"dt-bot-bar" lp>>'
+        })
+      } else {
+        document.querySelector('.data').innerHTML = '<tr><td class="text-center" colspan=15>no data</td></tr>'
+      }
+      
+      } else {
+        document.querySelector('.data').innerHTML = '<tr><td class="text-center" colspan=15>no data</td></tr>'
+      }
+  
+}
+
+load_data()
+   
+</script>
+
+{footer}

@@ -1,0 +1,33 @@
+PROJECT LATIHAN JATU
+folder /views/intranet
+isi ne html
+fokus e gawe module sesuai layout. layout e neng folder /views/intranet/dist
+ngko url e per modul dicatet wae. 
+format url: http://localhost/my-dt-project/intranet/<nama file html>
+contoh:
+file /views/intranet/home.html
+url http://localhost/my-dt-project/intranet/home
+neng njero html enek kode otomatis {url} ngko otomatis dadi http://localhost/my-dt-project
+
+
+
+PROJECT LATIHAN DEVAN
+folder /views/erp
+isi ne html
+fokus e gawe module sesuai layout. layout e neng folder /views/erp/dist
+ngko url e per modul dicatet wae. 
+format url: http://localhost/my-dt-project/erp/<nama file html>
+contoh:
+file /views/erp/home.html
+url http://localhost/my-dt-project/erp/home
+neng njero html enek kode otomatis {url} ngko otomatis dadi http://localhost/my-dt-project
+
+
+
+KETENTUAN UMUM
+install xampp
+jalankan xampp (nek error, update MSVCRT digugling sik)
+import database dt-erp.sql (nama database harus dt-erp) 
+nama folder project my-dt-project
+bukak http://localhost/my-dt-project/<project mu>/login
+nek muncul halaman login, berarti ws ready

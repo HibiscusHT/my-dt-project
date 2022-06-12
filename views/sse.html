@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="listener2()">Start</button>
+    <button onclick="closeme()">Stop</button>
+    <script>
+        
+            let es = ''
+var listener = function (event) {
+    
+    if(typeof event.data !== 'undefined'){
+console.log(event.data);
+    }
+
+};
+
+
+let closeme = () => { 
+    es.close()
+ } 
+
+var listener2 = function (event) {
+
+    let token = 'XHQtZXJw.MjAyMi0wNi0wOQ==.W3siSWQiOiIxIiwiRW1haWwiOiJ0ZXNAZW1haWwuY29tIiwiUGFzc3dvcmQiOiIkMnkkMTAkd0tJREFxRG5pZlF0VmN6TTlmR0RQT0ZjTHMycm9GNHB6YTlpbDBjZmU5VTFCWVg5Qnh3aG0iLCJVc2VyVHlwZSI6IjEiLCJSZWFsTmFtZSI6IkhpYmlzY3VzSFQiLCJQaG9uZSI6IjA4MTIzNDU2NzgiLCJDcmVhdGVkIjoiMjAyMi0wNS0yMCAwOTo1Nzo1MSIsIlVzZXJQaG90byI6bnVsbH1d'
+    
+    es = new EventSource("http://dterp.winnertechnology.co.id/sse/attendances?auth=" + token); 
+    es.addEventListener("open", listener);
+    es.addEventListener("message", listener);
+    es.addEventListener("error", closeme);
+
+};
+
+
+
+    </script>
+</body>
+</html>

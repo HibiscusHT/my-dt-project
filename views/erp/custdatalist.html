@@ -1,0 +1,106 @@
+{header}
+<div class="main-content-inner">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" href="{url}erp/custdata?token={token}">Entry Customer Master Data</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{url}erp/custdatalist?token={token}">List Customer Master Data</a>
+          </li>
+    </ul>
+    <div class="container-inner">
+      <div class="my-4">
+        <a href="#filter" class="btn btn-primary btn-icon" data-toggle="modal">
+          <i class="ico ico-filter sub"></i> FILTER
+        </a>
+        <a href="#" class="ml-2">
+          <i class="ico ico-file-ex middle"></i>
+        </a>
+      </div>
+      <table id="table" class="table table-mains nowrap" style="width:100%">
+        <thead>
+          <tr>
+            <td scope="col" class="text-center">No</td>
+            <td scope="col" class="text-center">Donator ID</td>
+            <td scope="col" class="text-center">Donator Name</td>
+            <td scope="col" class="text-center">Nick Name</td>
+            <td scope="col" class="text-center">Gender</td>
+            <td scope="col" class="text-center">Place of Birth</td>
+            <td scope="col" class="text-center">Date of Birth</td>
+            <td scope="col" class="text-center">Address</td>
+            <td scope="col" class="text-center">City</td>
+            <td scope="col" class="text-center">Phone Number</td>
+            <td scope="col" class="text-center">Email</td>
+            <td scope="col" class="text-center">KTP ID</td>
+            <td scope="col" class="text-center">Office Registration</td>
+            <td scope="col" class="text-center">PIC</td>
+            <td scope="col" class="text-center">Religion</td>
+            <td scope="col" class="text-center">Marriage Status</td>
+            <td scope="col" class="text-center">Income</td>
+            <td scope="col" class="text-center">Degree</td>
+            <td scope="col" class="text-center">Tagging</td>
+            <td scope="col" class="text-center">Action</td>
+          </tr>
+        </thead>
+        <tbody class="data">
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Modal Detail Tagging -->
+<div class="modal fade" id="tagging" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button data-dismiss="modal" class="close">
+        <i class="ico ico-back"></i>
+      </button>
+      <h5 class="modal-title text-primary pl-2">Detail Tagging</h5>
+
+    </div>
+    <div class="modal-body">
+      <div class="label-tag">
+        #customerbaik
+      </div>
+      <div class="label-tag">
+        #customersholeh
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+     async function load_data(){
+    let q = await fetch('{url}dtapi/loadcust')
+    let r = await q.json()
+    if(q.ok){
+      if(r.data.length > 0){
+        let m = ''
+        let no = 1
+        r.data.forEach((e)=>{
+          m += '<tr><td class="text-center" style="width: 60px;">'+no+'</td><td class="text-center">'+e.Id+'</td><td class="text-center">'+e.DonatorName+'</td><td class="text-center">'+e.NickName+'</td><td class="text-center">'+e.Gender+'</td><td class="text-center">'+e.BirthPlace+'</td><td class="text-center">'+e.BirthDate+'</td><td class="text-center">'+e.Address+'</td><td class="text-center"></td><td class="text-center">'+e.Phone+'</td><td class="text-center">'+e.Email+'</td><td class="text-center">'+e.KTP+'</td><td class="text-center">'+e.OfficeReg+'</td><td class="text-center">'+e.PIC+'</td><td class="text-center">'+e.Religion+'</td><td class="text-center">'+e.Marital+'</td><td class="text-center">'+e.Income+'</td><td class="text-center">'+e.Degree+'</td><td class="text-center"><a href="#tagging" data-toggle="modal">Detail</a></td><td class="text-center"><a href="#" class="mx-2"><i class="ico ico-pencil ico-warning"></i></a><a href="#" class="mx-2"><i class="ico ico-trash"></i></a></td></tr>'
+          no++
+        })
+        document.querySelector('.data').innerHTML = m
+        $('.table-mains').DataTable({
+          "dom": '<<"dt-topbar" if><"t-scool" <t>><"dt-bot-bar" lp>>'
+        })
+      } else {
+        document.querySelector('.data').innerHTML = '<tr><td class="text-center" colspan=15>no data</td></tr>'
+      }
+      
+      } else {
+        document.querySelector('.data').innerHTML = '<tr><td class="text-center" colspan=15>no data</td></tr>'
+      }
+  
+}
+
+load_data()
+</script>
+
+{footer}

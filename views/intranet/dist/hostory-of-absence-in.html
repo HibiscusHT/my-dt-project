@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/favico.png"/>
+
+    <title>DT PEDULI</title>
+  </head>
+
+<body>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <a href="#" class="menu-close"> <span class="icon-icon-ionic-md-close text-16"></span></a>
+  <div class="sidebar-logo">
+    <img src="images/logo-dt-peduli.svg" class="img-fluid" alt="">
+  </div>
+  <div class="sidebar-menu">
+    <ul class="nav flex-column">
+      <li class="nav-item dropdown dropdown-menu-cs">
+        <a class="nav-link dropdown-arrow active" href="#atta" role="button" data-toggle="collapse"
+          aria-haspopup="true" aria-expanded="false">
+          <div class="icon-menu">
+            <i class="ico ico-setting"></i>
+          </div>
+          <div class="pl-1">
+            Attendance and
+            Daily Report
+            <span class="ico ico-chevron-down arrow-menu"></span>
+          </div>
+        </a>
+        <div class="collapse dropdown-menu-list show" id="atta">
+          <a class="dropdown-item " href="daily-report.html">
+            <div class="icon-menu">
+              <i class="ico ico-doc"></i>
+            </div>
+            <div class="pl-1">
+              Daily Report
+            </div>
+          </a>
+          <a class="dropdown-item active" href="hostory-of-absence-in.html">
+            <div class="icon-menu">
+              <i class="ico ico-doc-down"></i>
+            </div>
+            <div class="pl-1">
+              History of Absence (in)
+            </div>
+          </a>
+          <a class="dropdown-item " href="hostory-of-absence-out.html">
+            <div class="icon-menu">
+              <i class="ico ico-doc-up"></i>
+            </div>
+            <div class="pl-1">
+              History of Absence (out)
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="announcement.html">
+          <div class="icon-menu"><i class="ico ico-allert"></i></div>
+          <div class="pl-1">Announcement</div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="permission.html">
+          <div class="icon-menu"><i class="ico ico-dots"></i></div>
+          <div class="pl-1">Permission</div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="overtime.html">
+          <div class="icon-menu"><i class="ico ico-time"></i></div>
+          <div class="pl-1">Overtime</div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="paid-leave.html">
+          <div class="icon-menu"><i class="ico ico-wallet"></i></div>
+          <div class="pl-1">Paid Leave</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="text-center">
+    <a href="#" class="btn btn-primary btn-lg">OPEN ERP</a>
+  </div>
+</div>
+
+    <div class="main-content">
+      <div class="header-menu">
+    <div class="row align-items-center">
+        <div class="col-md-6 col-8 pl-0">
+            <div class="d-flex align-items-center">
+                <a href="#" class="mr-4 minimize">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 16">
+                        <g id="fi-sr-menu-burger" transform="translate(0 -4)">
+                            <rect id="Rectangle_8858" data-name="Rectangle 8858" width="24" height="3" rx="1"
+                                transform="translate(0 11)" fill="#0b48ae" />
+                            <rect id="Rectangle_8859" data-name="Rectangle 8859" width="24" height="3" rx="1"
+                                transform="translate(0 4)" fill="#0b48ae" />
+                            <rect id="Rectangle_8860" data-name="Rectangle 8860" width="24" height="3" rx="1"
+                                transform="translate(0 18)" fill="#0b48ae" />
+                        </g>
+                    </svg>
+                </a>
+                <div class="form-inline-group right-i header-search">
+                    <input type="text" class="form-control" placeholder="What are you looking for ?">
+                    <button class="btn">
+                        <i class="ico ico-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-4 pr-0">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="ico ico-notif"></i>
+                        <div class="notif-count">
+                            4
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <div class="pr-2 text-14 username">Hi, CO!</div>
+                        <div class="user-img"><img src="https://i.pravatar.cc/100" class="img-fluid" alt=""></div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+                <li class="nav-item clock-header">
+                    <a class="nav-link">
+                        <div><i class="ico ico-clock"></i></div>
+                        <div class="pl-1 digital-clock">13:05:06</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+      <div class="main-content-inner">
+        <div class="main-content-inner-child">
+          <div class="row align-items-center">
+            <div class="col-lg-8 col-md-7 mb-2">
+              <h2 class="mb-0">History of Absence (in)</h2>
+            </div>
+            <div class="col-lg-4 col-md-5 mb-2">
+              <div class="form-material">
+                <input type="text" class="form-control" id="searchField" placeholder="Search data here">
+                <button class="btn">
+                  <i class="ico ico-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="mb-2"><a href="#">Sub-menu</a></div>
+          <div class="row align-items-center">
+            <div class="col-md-6 mb-2">
+              <a href="#filter" class="btn btn-primary btn-icon" data-toggle="modal">
+                <i class="ico ico-filter sub"></i> FILTER
+              </a>
+            </div>
+            <div class="col-md-6 mb-2">
+              <div class="add-section">
+                <div class="row align-items-center">
+                  <div class="col-6">
+                    Add Daily Report
+                  </div>
+                  <div class="col-6 text-right">
+                    <a href="#add" class="btn btn-success" data-toggle="modal">
+                      <i class="ico ico-user-add sub mr-1"></i> Add
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <table id="table" class="table table-main nowrap" style="width:100%">
+            <thead>
+              <tr>
+                <td scope="col" class="text-2 medium text-center">No</td>
+                <td scope="col" class="text-2 medium text-center">Date</td>
+                <td scope="col" class="text-2 medium text-center">Latitude</td>
+                <td scope="col" class="text-2 medium text-center">Longitude</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center" style="width: 60px;">1</td>
+                <td class="text-center">Senin, 23 Maret 2022</td>
+                <td class="text-center">Lorem Ipsum</td>
+                <td class="text-center">Lorem Ipsum</td>
+              </tr>
+            
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Add -->
+  <div class="modal fade" id="add" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button data-dismiss="modal" class="close">
+            <i class="ico ico-back"></i>
+          </button>
+          <h5 class="modal-title text-primary pl-2">Add Paid Leave</h5>
+
+        </div>
+        <div class="modal-body">
+          <form action="#">
+            <div class="form-group">
+              <label>Reason</label>
+              <input type="text" class="form-control" placeholder="Reason">
+            </div>
+            <div class="form-group">
+              <label>Start Date</label>
+              <div class="inline-group">
+                <input type="text" class="form-control date" placeholder="22 Januari 2022">
+                <i class="ico ico-calendar"></i>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>End Date</label>
+              <div class="inline-group">
+                <input type="text" class="form-control date" placeholder="22 Januari 2022">
+                <i class="ico ico-calendar"></i>
+              </div>
+            </div>
+            <div class="text-center">
+              <button data-dismiss="modal" class="btn btn-danger btn-lg px-4">
+                <i class="ico ico-cancel sub mt-1"></i> CANCEL
+              </button>
+              <button type="submit" class="btn btn-success btn-lg px-4">
+                <i class="ico ico-save sub mt-1"></i> APPLY
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Filter -->
+  <div class="modal fade" id="filter" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button data-dismiss="modal" class="close">
+            <i class="ico ico-back"></i>
+          </button>
+          <h5 class="modal-title text-primary pl-2">Filter</h5>
+
+        </div>
+        <div class="modal-body">
+          <form action="#">
+            <div class="form-group">
+              <label>Date</label>
+              <div class="d-flex align-items-center">
+                <div class="w-100">
+                  <div class="inline-group">
+                    <input type="text" class="form-control date" placeholder="Start Date">
+                    <i class="ico ico-calendar"></i>
+                  </div>
+                </div>
+                <div class="ww-01"></div>
+                <div class="w-100">
+                  <div class="inline-group">
+                    <input type="text" class="form-control date" placeholder="End Date">
+                    <i class="ico ico-calendar"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-5">
+              <button data-dismiss="modal" class="btn btn-danger btn-lg px-4">
+                <i class="ico ico-cancel sub mt-1"></i> CANCEL
+              </button>
+              <button type="submit" class="btn btn-success btn-lg px-4">
+                <i class="ico ico-filter sub mt-1"></i> APPLY FILTER
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Detail -->
+  <div class="modal fade" id="detail" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button data-dismiss="modal" class="close">
+            <i class="ico ico-back"></i>
+          </button>
+          <h5 class="modal-title text-primary pl-2">Reason Detail</h5>
+        </div>
+        <div class="modal-body">
+          <p class="text-ceter">
+            Lorem Ipsum dolor sit amet constecturer. Lorem Ipsum
+            dolor sit amet constecturer.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="./js/script-bundle.min.js"></script>
+<script type="text/javascript" src="./js/script.js"></script>
+
+  <script>
+
+    $("#endtime").keyup(function () {
+      var valuestart = "8:45am";
+      var valuestop = "8:46pm";
+      var hourStart = new Date("01/01/2007 " + valuestart).getHours();
+      var hourEnd = new Date("01/01/2007 " + valuestop).getHours();
+
+      var minuteStart = new Date("01/01/2007 " + valuestart).getMinutes();
+      var minuteEnd = new Date("01/01/2007 " + valuestop).getMinutes();
+
+      var hourDiff = hourEnd - hourStart;
+      var minuteDiff = minuteEnd - minuteStart;
+      if (minuteDiff < 0) {
+        hourDiff = hourDiff - 1;
+      }
+      alert(hourDiff);
+
+    })
+    $('.permission').select2({
+      theme: 'bootstrap4 main-form-control',
+      placeholder: "Select Permission Type",
+      minimumResultsForSearch: -1
+
+    });
+
+    $('.time').timepicker();
+
+
+
+  </script>
+</body>
+
+</html>

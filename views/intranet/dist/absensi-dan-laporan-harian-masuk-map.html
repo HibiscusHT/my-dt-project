@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/favico.png"/>
+
+    <title>DT PEDULI</title>
+  </head>
+
+<body>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <a href="#" class="menu-close"> <span class="icon-icon-ionic-md-close text-16"></span></a>
+  <div class="sidebar-logo">
+    <img src="images/logo-dt-peduli.svg" class="img-fluid" alt="">
+  </div>
+  <div class="sidebar-menu">
+    <ul class="nav flex-column">
+      <li class="nav-item dropdown dropdown-menu-cs">
+        <a class="nav-link dropdown-arrow @@nav-sub" href="#atta" role="button" data-toggle="collapse"
+          aria-haspopup="true" aria-expanded="false">
+          <div class="icon-menu">
+            <i class="ico ico-setting"></i>
+          </div>
+          <div class="pl-1">
+            Attendance and
+            Daily Report
+            <span class="ico ico-chevron-down arrow-menu"></span>
+          </div>
+        </a>
+        <div class="collapse dropdown-menu-list @@corporateshow" id="atta">
+          <a class="dropdown-item @@report" href="daily-report.html">
+            <div class="icon-menu">
+              <i class="ico ico-doc"></i>
+            </div>
+            <div class="pl-1">
+              Daily Report
+            </div>
+          </a>
+          <a class="dropdown-item @@in" href="hostory-of-absence-in.html">
+            <div class="icon-menu">
+              <i class="ico ico-doc-down"></i>
+            </div>
+            <div class="pl-1">
+              History of Absence (in)
+            </div>
+          </a>
+          <a class="dropdown-item @@out" href="hostory-of-absence-out.html">
+            <div class="icon-menu">
+              <i class="ico ico-doc-up"></i>
+            </div>
+            <div class="pl-1">
+              History of Absence (out)
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link @@announcement" href="announcement.html">
+          <div class="icon-menu"><i class="ico ico-allert"></i></div>
+          <div class="pl-1">Announcement</div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link @@permission" href="permission.html">
+          <div class="icon-menu"><i class="ico ico-dots"></i></div>
+          <div class="pl-1">Permission</div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link @@overtime" href="overtime.html">
+          <div class="icon-menu"><i class="ico ico-time"></i></div>
+          <div class="pl-1">Overtime</div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link @@paid" href="paid-leave.html">
+          <div class="icon-menu"><i class="ico ico-wallet"></i></div>
+          <div class="pl-1">Paid Leave</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="text-center">
+    <a href="#" class="btn btn-primary btn-lg">OPEN ERP</a>
+  </div>
+</div>
+    <div class="main-content">
+
+      <div class="header-menu">
+    <div class="row align-items-center">
+        <div class="col-md-6 col-8 pl-0">
+            <div class="d-flex align-items-center">
+                <a href="#" class="mr-4 minimize">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 16">
+                        <g id="fi-sr-menu-burger" transform="translate(0 -4)">
+                            <rect id="Rectangle_8858" data-name="Rectangle 8858" width="24" height="3" rx="1"
+                                transform="translate(0 11)" fill="#0b48ae" />
+                            <rect id="Rectangle_8859" data-name="Rectangle 8859" width="24" height="3" rx="1"
+                                transform="translate(0 4)" fill="#0b48ae" />
+                            <rect id="Rectangle_8860" data-name="Rectangle 8860" width="24" height="3" rx="1"
+                                transform="translate(0 18)" fill="#0b48ae" />
+                        </g>
+                    </svg>
+                </a>
+                <div class="form-inline-group right-i header-search">
+                    <input type="text" class="form-control" placeholder="What are you looking for ?">
+                    <button class="btn">
+                        <i class="ico ico-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-4 pr-0">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="ico ico-notif"></i>
+                        <div class="notif-count">
+                            4
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <div class="pr-2 text-14 username">Hi, CO!</div>
+                        <div class="user-img"><img src="https://i.pravatar.cc/100" class="img-fluid" alt=""></div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+                <li class="nav-item clock-header">
+                    <a class="nav-link">
+                        <div><i class="ico ico-clock"></i></div>
+                        <div class="pl-1 digital-clock">13:05:06</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+      <div class="main-content-inner">
+        <div class="main-content-inner-child">
+          <h2 class="mb-5">Attendance and Daily Report</h2>
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="maps-location"></div>
+            </div>
+            <div class="col-md-6 text-center">
+              <p>Lokasi Anda</p>
+              <div class="h4 address-name mb-5"></div>
+              <button class="btn btn-warning btn-lg">ABSEN MASUK SEKARANG</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="./js/script-bundle.min.js"></script>
+<script type="text/javascript" src="./js/script.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn4Ah0LbR1ArWtKBbXUZm6Sovv85JDlqU"></script>
+  <script>
+    var x = $('.maps-location');
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+      $('.maps-location').html('Geolocation is not supported by this browser.')
+    }
+    function showPosition(position) {
+      var map = '<iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" ' +
+        'src="https://maps.google.com/maps?q=' + position.coords.latitude + ',' + position.coords.longitude + '&id=es&z=14&amp;output=embed"> ' +
+        '</iframe>';
+      x.append(map);
+
+      /* Current Coordinate */
+      var lat = position.coords.latitude;
+      var lng = position.coords.longitude;
+      var google_map_pos = new google.maps.LatLng(lat, lng);
+
+      /* Use Geocoder to get address */
+      var google_maps_geocoder = new google.maps.Geocoder();
+      google_maps_geocoder.geocode(
+        { 'latLng': google_map_pos },
+        function (results, status) {
+          if (status == google.maps.GeocoderStatus.OK && results[0]) {
+            // console.log(results[0].formatted_address);
+            $('.address-name').html(results[0].formatted_address);
+          }
+        }
+      );
+    }
+    function showError(error) {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          x.html('User denied the request for Geolocation.')
+          break;
+        case error.POSITION_UNAVAILABLE:
+          x.html('Location information is unavailable.')
+          break;
+        case error.TIMEOUT:
+          x.html('The request to get user location timed out.')
+          break;
+        case error.UNKNOWN_ERROR:
+          x.html('An unknown error occurred.')
+          break;
+      }
+    }
+
+  </script>
+</body>
+
+</html>

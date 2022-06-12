@@ -1,0 +1,141 @@
+
+ 
+  <!--
+    <script>
+      Chart.defaults.font.size = 14;
+      var options = {
+        type: 'line',
+        data: {
+          labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"],
+          datasets: [
+            {
+              label: 'Laba Kotor',
+              data: [390, 500, 600, 563, 421, 500, 541, 421, 415, 300, 411, 300],
+              borderWidth: 2,
+              borderColor: "#dac8a7",
+              backgroundColor: '#dac8a7',
+              tension: 0.4
+            },
+            {
+              label: 'Laba Bersih',
+              data: [400, 440, 500, 363, 521, 300, 441, 321, 515, 500, 311, 500],
+              borderWidth: 2,
+              borderColor: "#ad8849",
+              backgroundColor: '#ad8849',
+              tension: 0.4
+            }
+          ]
+        },
+        options: {
+          plugins: {
+            title: {
+              display: true,
+              position: "top",
+              align: "start",
+              text: 'Penjualan Bersih',
+              font: {
+                family: "Josefin Sans",
+                weight: 400
+              }
+            },
+            legend: {
+              position: "top",
+              align: "end",
+              labels: {
+                // This more specific font property overrides the global property
+                font: {
+                  family: "Josefin Sans"
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              ticks: {
+                font: {
+                  family: "Josefin Sans",
+                  size: 12
+                }
+              }
+            },
+            y: {
+              ticks: {
+                font: {
+                  family: "Josefin Sans",
+                  size: 12
+  
+                }
+              }
+            }
+          }
+        }
+      }
+  
+      var ctx = document.getElementById('chartJSContainer').getContext('2d');
+      new Chart(ctx, options);
+    </script> -->
+
+    <script>
+      async function get_profile()
+      {
+          let hdr = new Headers
+          hdr.append('Authorization','{token}')
+          let q = await fetch('{url}dtapi/getprofile',{
+              method: 'GET',
+              headers: hdr
+          })
+          let r = await q.json()
+          if(q.ok){
+              document.querySelector('#profiles').innerText = r.data[0].RealName
+              if(document.querySelector('#userid') != undefined){
+                document.querySelector('#userid').value = r.data[0].Id
+              }
+          } else  {
+              alert(r.message)
+              location.href = '{url}intranet/login'
+          }  
+      }
+  
+      get_profile()
+
+      async function get_module()
+      {
+        let q = await fetch('{url}dtapi/getmodules?parent=0')
+        let r = await q.json()
+        if(q.ok){
+          
+          let k = 0
+          let mnu = ""
+          for(let e of r.data){
+            let mn = ""
+            let s = await fetch('{url}dtapi/getmodules?parent=' + e.Id)
+            let t = await s.json()
+
+            if(s.ok){
+              if(t.data.length > 0){
+                  mn += "<li class='nav-item dropdown dropdown-menu-cs'><a class='nav-link dropdown-arrow @@nav-sub' href='#menu" + k + "' role='button' data-toggle='collapse' aria-haspopup='true' aria-expanded='false'> <div class='icon-menu'> <i class='ico ico-file'></i> </div> <div class='pl-1'>" + e.ModuleName  + " <span class='ico ico-chevron-down arrow-menu'></span> </div> </a>"
+                  mn += "<div class='collapse dropdown-menu-list @@corporateshow' id='menu" + k + "'>"
+                t.data.forEach((f)=>{
+                  mn += " <a class='dropdown-item @@overview'  href='{url}erp/" + f.Link  + "?token={token}'> <div class='pl-1'>" + f.ModuleName  + " </div> </a>"
+                })
+                mn += "</div></li>" 
+              } else {
+                mn += " <li class='nav-item'><a class='nav-link @@startpage' href='{url}erp/" + e.Link  + "?token={token}'><div class='icon-menu'><i class='ico ico-file'></i></div><div class='pl-1'>" + e.ModuleName  + " </div></a></li>"
+              }
+              
+            }
+ 
+            k++
+            mnu += mn
+          }
+          document.querySelector('.menus').innerHTML = mnu
+          
+        }
+      }
+
+      get_module()
+  </script>
+
+</body>
+
+</html>  

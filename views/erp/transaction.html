@@ -1,0 +1,406 @@
+{header}
+<div class="main-content-inner">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="{url}erp/transaction?token={token}">Entry Transaction</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{url}erp/translist?token={token}">List Transaction</a>
+      </li>
+    </ul>
+    <form action="#">
+      <div class="card-over mb-4">
+        <h3 class="title-box">
+          Donator Data
+        </h3>
+        <div class="container-inner">
+          <div class="group-sm">
+            <div class="input-list">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  Donator ID
+                </div>
+                <div class="col-md-8">
+                  <div class="inline-group">
+                    <input id="donaturId" class="form-control form-sm" placeholder="" data-key="DonatorId">
+                    <i class="select-arrow"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="input-list">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  Mobile Phone Number
+                </div>
+                <div class="col-md-8">
+                  <div class="inline-group">
+                    <input id="mobileNumber" class="form-control form-sm" placeholder="085"  data-key="DonatorPhone">
+                    <i class="select-arrow"></i>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="input-list">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  Donator Name
+                </div>
+                <div class="col-md-8">
+                  <div class="inline-group">
+                    <input id="donaturName" class="form-control form-sm" placeholder="Dani..."  data-key="DonatorName">
+                    <i class="select-arrow"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-over mb-4">
+        <h3 class="title-box">
+          Transaction Detail
+        </h3>
+        <div class="container-inner">
+          <div class="group-sm">
+            <div class="input-list">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  Material Group
+                </div>
+                <div class="col-md-8">
+                  <div class="inline-group">
+                    <input id="materialGroup" class="form-control form-sm" placeholder="Dani..."  data-key="MaterialGroup" oninput="getmaterial(this)">
+                    <i class="select-arrow"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="input-list">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  Material Number
+                </div>
+                <div class="col-md-8">
+                  <div class="inline-group">
+                    <input id="materialNumber" class="form-control form-sm" placeholder="123..."  data-key="MaterialNumber">
+                    <i class="select-arrow"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="input-list">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  Sub Material Number
+                </div>
+                <div class="col-md-8">
+                  <div class="inline-group">
+                    <input id="submaterialNumber" class="form-control form-sm" placeholder="123..."  data-key="SubMaterialNumber">
+                    <i class="select-arrow"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="input-list">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  Amount
+                </div>
+                <div class="col-md-8">
+                  <div class="d-flex">
+                    <div class="currency-cn">
+                      <select class="select-sm w-100">
+                        <option value="IDR">Rp</option>
+                        <option value="USD">US$</option>
+                        <option value="EURO">EURO</option>
+                      </select>
+                    </div>
+                    <div class="w-100">
+                      <div class="inline-group">
+                        <input id="ammount" class="form-control form-sm" placeholder="123.."  data-key="Amount">
+                        <i class="select-arrow"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="input-list">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  Transaction Type
+                </div>
+                <div class="col-md-8">
+                  <select class="select-sm w-100 form-sm"  data-key="TrxType">
+                    <option></option>
+                    <option value="Lorem">Lorem</option>
+                    <option value="Ipsum">Ipsum</option>
+                    <option value="Dolor">Dolor</option>
+                    <option value="sit amet">sit amet</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="input-list">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  Via Himpun
+                </div>
+                <div class="col-md-8">
+                  <select class="select-sm w-100 form-sm"  data-key="ViaHimpun">
+                    <option></option>
+                    <option value="Lorem">Lorem</option>
+                    <option value="Ipsum">Ipsum</option>
+                    <option value="Dolor">Dolor</option>
+                    <option value="sit amet">sit amet</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="input-list">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  PIC
+                </div>
+                <div class="col-md-8">
+                  <div class="inline-group">
+                    <input id="pic" class="form-control form-sm" placeholder="Andi..."  data-key="PIC">
+                    <i class="select-arrow"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="input-list">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  Note
+                </div>
+                <div class="col-md-8">
+                  <input type="text" class="form-control form-sm" placeholder="Lorem Ipsum"  data-key="Note">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <input type="hidden" name="" id="userid" class="form-sm" data-key="UserId">
+      <div class="mt-5 container-inner">
+        <button type="button" class="btn btn-success px-5" onclick="save_me()">
+          <i class="ico ico-save mr-2"></i> SUBMIT
+        </button>
+      </div>
+    </form>
+
+
+  </div>
+</div>
+</div>
+
+<script> 
+ 
+  async function save_me()
+  {
+    let fd = new FormData
+    let forms = document.querySelectorAll('.form-sm')
+    forms.forEach((e)=>{
+      fd.append(e.dataset.key,e.value)
+    })
+    fd.append('DonationDate',new Date().toISOString())
+    let hdr = new Headers
+    hdr.append('Authorization','{token}')
+    let q = await fetch('{url}dtapi/setdonation',{
+      method: 'POST',
+      body: fd,
+      headers: hdr
+    })
+    if(q.ok){
+      alert('donation successfully added')
+      location.href = '{url}erp/translist?token={token}'
+    }
+  }
+</script>
+
+<script>
+  $('#mobileNumber').autocomplete({
+    source: [
+      "08512341234",
+      "089718728712",
+      "083829189212",
+      "0819819839198",
+    ],
+    minLength: 0
+  }).focus(function () {
+    $(this).data("uiAutocomplete").search($(this).val());
+  });
+
+  $('#donaturId').autocomplete({ source: async (req,res)=>{
+ 
+    let hdr = new Headers
+    hdr.append('Authorization','{token}')
+    let q = await fetch('{url}dtapi/getdonator?id=' + req.term,{
+      method: 'GET',
+      headers: hdr
+    })
+    let r = await q.json()
+    if(q.ok){
+       let data = []
+       r.data.forEach((e)=>{
+         let obj = {
+           label: e.Id + ' (' + e.DonatorName + ')',
+           value: e.Id,
+           DonatorName: e.DonatorName,
+           Phone: e.Phone
+         }
+         data.push(obj)
+       })
+       res(data)
+    } 
+
+
+  }}).on( "autocompleteselect", function( event, ui ) {
+    document.querySelector('#donaturName').value = ui.item.DonatorName
+    document.querySelector('#mobileNumber').value = ui.item.Phone
+  } )
+  /*.focus(function () {
+    $(this).data("uiAutocomplete").search($(this).val());
+  });
+
+  $('#donaturName').autocomplete({
+    source: [
+      "Lorem Ipsum",
+      "Dolor Sit Amet",
+    ],
+    minLength: 0
+  }).focus(function () {
+    $(this).data("uiAutocomplete").search($(this).val());
+  }); */
+
+  $('#materialGroup').autocomplete({
+    source: async (req,res)=>{
+
+      let hdr = new Headers
+    hdr.append('Authorization','{token}')
+    let q = await fetch('{url}dtapi/getallmaterial?q=' + req.term,{
+      method: 'GET',
+      headers: hdr
+    })
+    let r = await q.json()
+    if(q.ok){
+       let data = []
+       r.data.forEach((e)=>{
+         let obj = {
+           label: e.Id + ' (' + e.GroupName + ')',
+           value: e.GroupName,
+           Material: e.Id 
+         }
+         data.push(obj)
+       })
+       res(data)
+    } 
+
+    },
+    minLength: 1
+  }).on( "autocompleteselect", function( event, ui ) { 
+    document.querySelector('#materialNumber').value = ui.item.Material
+  } )
+  
+  /*.focus(function () {
+    $(this).data("uiAutocomplete").search($(this).val());
+  });
+
+  $('#materialNumber').autocomplete({
+    source: [
+      "Lorem Ipsum",
+      "Dolor Sit Amet",
+    ],
+    minLength: 0
+  }).focus(function () {
+    $(this).data("uiAutocomplete").search($(this).val());
+  }); */
+
+  $('#submaterialNumber').autocomplete({
+    source: async (req,res)=>{
+
+
+      let qs = document.querySelector('#materialNumber').value
+      let hdr = new Headers
+    hdr.append('Authorization','{token}')
+    let q = await fetch('{url}dtapi/getsubmaterial?group=' + qs + '&q=' + req.term,{
+      method: 'GET',
+      headers: hdr
+    })
+    let r = await q.json()
+    if(q.ok){
+       let data = []
+       r.data.forEach((e)=>{
+         let obj = {
+           label: e.Id + ' (' + e.SubName + ')',
+           value: e.Id,
+           Material: e.Id 
+         }
+         data.push(obj)
+       })
+       res(data)
+    } 
+
+    },
+    minLength: 1
+  }) 
+  
+  /*.focus(function () {
+    $(this).data("uiAutocomplete").search($(this).val());
+  });
+
+  $('#ammount').autocomplete({
+    source: [
+      "1234512",
+      "32134123",
+    ],
+    minLength: 0
+  }).focus(function () {
+    $(this).data("uiAutocomplete").search($(this).val());
+  }); */
+
+  $('#pic').autocomplete({
+    source: async (req,res)=>{
+      let hdr = new Headers
+      hdr.append('Authorization','{token}')
+      let q = await fetch('{url}dtapi/getallusers?q=' + req.term,{
+        method: 'GET',
+        headers: hdr
+      })
+      let r = await q.json()
+      if(q.ok){
+        let data = []
+       r.data.forEach((e)=>{
+         let obj = {
+           label: e.Id + ' (' + e.RealName + ')',
+           value: e.Id,
+           Material: e.Id 
+         }
+         data.push(obj)
+       })
+       res(data)
+      }
+    },
+    minLength: 1
+  })/*.focus(function () {
+    $(this).data("uiAutocomplete").search($(this).val());
+  });*/
+
+  
+  $('.currency').select2({
+    theme: 'bootstrap4 select-sm bg-grey' 
+  });
+
+  $('.select-sm').select2({
+    theme: 'bootstrap4 select-sm bg-grey'
+  })
+
+
+</script>
+
+{footer}
